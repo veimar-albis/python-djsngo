@@ -24,7 +24,7 @@ while opcion!=0:
             print(palabra)
     elif opcion == 2:
         edad=int(input("Introduce tu edad: "))
-        for i in range(1,edad)+1:
+        for i in range(1,edad+1):
             print("cumpliste",i,"años")
     elif opcion == 3:
         numero=int(input("Introduce un número: "))
