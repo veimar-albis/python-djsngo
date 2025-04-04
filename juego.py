@@ -43,4 +43,3 @@ while True:
         break
     jugador_actual="O" if jugador_actual=="X" else "X"
     # Cambiamos de jugador
-    
