@@ -24,7 +24,7 @@ class Libra:
         self.color = "dorado"
 
     def vueltas(self):
-        caras_opciones[True,False]
+        caras_opciones=[True,False]
         eleccion = random.choice(caras_opciones)
         self.caras = eleccion
         return self.caras
