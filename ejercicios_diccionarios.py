@@ -81,7 +81,7 @@ Artículo 2 	Precio
 Artículo 3 	Precio
 … 	…
 Total 	Coste'''
-cesta = {}
+'''cesta = {}
 while True:
     articulo = input('Introduce el nombre del artículo y su costo (o "salir" para terminar): ')
     if articulo.lower() == 'salir':
@@ -94,4 +94,21 @@ total = 0
 for articulo, precio in cesta.items():
     print(f'{articulo}\t{precio}')
     total += precio
-print(f'Total: {total}')
+print(f'Total: {total}')'''
+#ejercicio8
+'''Escribir un programa que cree un diccionario de traducción español-inglés. El usuario introducirá las palabras en español e inglés separadas por dos puntos, y cada par <palabra>:<traducción> separados por comas. El programa debe crear un diccionario con las palabras y sus traducciones. Después pedirá una frase en español y utilizará el diccionario para traducirla palabra a palabra. Si una palabra no está en el diccionario debe dejarla sin traducir.'''
+traduccion = input('Introduce las palabras en español e inglés separadas por dos puntos y cada par separado por comas: ')
+traduccion = traduccion.split(',')
+diccionario = {}
+for par in traduccion:
+    palabra, traduccion = par.split(':')
+    diccionario[palabra.strip()] = traduccion.strip()
+frase = input('Introduce una frase en español: ')
+frase = frase.split()
+traduccion_frase = []
+for palabra in frase:
+    if palabra in diccionario:
+        traduccion_frase.append(diccionario[palabra])
+    else:
+        traduccion_frase.append(palabra)
+print(' '.join(traduccion_frase))
