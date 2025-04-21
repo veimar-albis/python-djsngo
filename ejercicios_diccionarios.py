@@ -22,7 +22,7 @@ if fruta in frutas:
 else:
     print('La fruta no está en el diccionario.')'''
 #ejercicio4
-'''fecha = input('Introduce una fecha en formato dd/mm/aaaa: ').lstrip(0)
+'''fecha = input('Introduce una fecha en formato dd/mm/aaaa: ')
 fecha = fecha.split('/')
 dia = fecha[0]  #0  es el dia
 mes = fecha[1]  #1 es el mes
@@ -78,7 +78,7 @@ for articulo, precio in cesta.items():
     total += precio
 print(f'Total: {total}')'''
 #ejercicio8
-'''traduccion = input('Introduce las palabras en español e inglés separadas por dos puntos y cada par separado por comas: ')# ejemplo: 'casa:house, perro:dog, gato:cat'
+traduccion = input('Introduce las palabras en español e inglés separadas por dos puntos y cada par separado por comas: ')# ejemplo: 'casa:house, perro:dog, gato:cat'
 traduccion = traduccion.split(',')# separa los pares por comas
 diccionario = {}
 for par in traduccion:# separa cada par por dos puntos
@@ -92,7 +92,7 @@ for palabra in frase:# traduce cada palabra de la frase
         traduccion_frase.append(diccionario[palabra])# añade la traducción
     else:# si la palabra no está en el diccionario
         traduccion_frase.append(palabra)# añade la palabra sin traducir
-print(' '.join(traduccion_frase))'''
+print(' '.join(traduccion_frase))
 #ejercicio9
 '''facturas = {}
 total_cobrado = 0
@@ -118,41 +118,4 @@ while True:
         print('Opción no válida.')
     print(f'Total cobrado: {total_cobrado}')
     print(f'Total pendiente de cobro: {total_pendiente}')'''
-#ejercicio10
 
-clientes = {}
-while True:
-    opcion = input('\n¿Qué opción deseas elegir? \n(1) Añadir cliente, \n(2) Eliminar cliente, \n(3) Mostrar cliente, \n(4) Listar todos los clientes, \n(5) Listar clientes preferentes, \n(6) Terminar: ')
-    if opcion == '1':# añadir cliente
-        nif = input('Introduce el NIF del cliente: ')
-        nombre = input('Introduce el nombre del cliente: ')
-        direccion = input('Introduce la dirección del cliente: ')
-        telefono = input('Introduce el teléfono del cliente: ')
-        correo = input('Introduce el correo del cliente: ')
-        preferente = input('¿Es un cliente preferente? (True/False): ')
-        clientes[nif] = {'Nombre': nombre, 'Dirección': direccion, 'Teléfono': telefono, 'Correo': correo, 'Preferente': preferente}
-    elif opcion == '2':# eliminar cliente
-        nif = input('Introduce el NIF del cliente a eliminar: ')
-        if nif in clientes:# si el NIF existe
-            del clientes[nif]
-            print(f'Cliente con NIF {nif} eliminado.')
-        else:# si el NIF no existe
-            print('El NIF no existe.')
-    elif opcion == '3':# mostrar cliente
-        nif = input('Introduce el NIF del cliente a mostrar: ')
-        if nif in clientes:# si el NIF existe
-            print(clientes[nif])
-        else:# si el NIF no existe
-            print('El NIF no existe.')
-    elif opcion == '4':# listar todos los clientes
-        for nif, datos in clientes.items():
-            print(f'NIF: {nif}, Nombre: {datos["Nombre"]}')
-    elif opcion == '5':# listar clientes preferentes
-        for nif, datos in clientes.items():
-            if datos['Preferente'] == True:
-                print(f'NIF: {nif}, Nombre: {datos["Nombre"]}')
-    elif opcion == '6':# terminar el programa
-        break
-    else:# si la opción no es válida
-        print('\nOpción no válida.')
-#Ejercicio 11
