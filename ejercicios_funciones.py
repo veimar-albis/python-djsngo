@@ -119,7 +119,7 @@ def contar_palabras(cadena):
 def palabra_mas_repetida(frecuencia):
     max_palabra = max(frecuencia, key=frecuencia.get)
     return (max_palabra, frecuencia[max_palabra])
-cadena = input('Introduce una cadena de caracteres: ')
+cadena = input('Introduce una cadena de caracteres: ').lower()
 frecuencia = contar_palabras(cadena)
 print(f'Frecuencia de palabras: {frecuencia}')
 max_palabra, max_frecuencia = palabra_mas_repetida(frecuencia)
